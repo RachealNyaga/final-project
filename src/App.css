@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #dfd2d2;
+  border-radius: 5px;
+  background-color: #1C82AD;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.login label {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  background-color: #03C988;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+ .login button:hover {
+  background-color: #00337C;
+}
+
+.login small {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.login a {
+  color: #03C988;
+  text-decoration: none;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #00337C;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.logo img{
+  width: 50px;
+  height: 50px;
+ 
+}
+.nav div {
+  display: flex;
+  align-items: center;
+}
+
+.nav div a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav li a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+
+
+.post-question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.post-question button{
+ 
+    background-color: #03C988;
+    color: white;
+   border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+input[type="text"] {
+  
+
+  margin-right: 12px;
+  font-size: 15px;
+  padding: 8px;
+}
+
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 50px;
+  text-align: center;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  padding: 30px;
+  text-align: center;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+.home h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #292929;
+}
+
+.home p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.home a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.home a:hover {
+  text-decoration: underline;
+}
+
+.home h4 {
+  font-size: 15px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+
+.question {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px auto;
+
+}
+
+.question h3 {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.question a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.question a:hover {
+  text-decoration: underline;
+}
+
+.question button {
+  background-color: #cc0000;
   color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.question button:hover {
+  background-color: #3512e2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error {
+  background-color: red;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
 }
