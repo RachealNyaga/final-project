@@ -7,7 +7,6 @@ function Register() {
 
   let [user, setUser] = useState(
     { // User object
-    name: "",
     username: "",
     email: "",
     password: "",
@@ -35,12 +34,12 @@ function Register() {
     createUserWithEmailAndPassword(auth, user.email, user.password)
       .then((userCredential) => {
         // Signed in 
-        const user = userCredential.user;
+        const newUser = userCredential.user;
         // ...
         console.log(user);
 
         updateProfile(auth.currentUser, {
-          displayName:user.name, photoURL: "https://example.com/jane-q-user/profile.jpg"
+          displayName:user.username, photoURL: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }).then((res) => {
           // Profile updated!
           console.log(res);

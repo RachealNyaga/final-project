@@ -12,7 +12,7 @@ export async function fetchQuestions (dispatch) {
         docs.push({id:doc.id, data: doc.data()});
     });
     dispatch({
-        type: FETCH_QUESTIONS,
+        type: FETCH_QUESTIONS, 
         payload: docs
     })
 };

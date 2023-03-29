@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { db } from "../config"
-import { doc, setDoc } from "firebase/firestore";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import { arrayUnion, doc, setDoc } from "firebase/firestore";
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchQuestion } from '../actions/questionActions';
 
@@ -13,6 +16,7 @@ function Question() {
   ////////////////////////////////////
 
   let [answer, setAnswer] = useState("");
+  let [comment, setComment] = useState("");
 
   // Get id from the query string
   let { id } = useParams();
@@ -28,9 +32,15 @@ function Question() {
     console.log(id);
 
     const questionRef = doc(db, 'questions', id);
-    setDoc(questionRef, { answers: [answer] }, { merge: true });
+    setDoc(questionRef, { answers: arrayUnion({id: new Date().getTime().toString(), answer, comments: []}) }, { merge: true });
   }
 
+  // Add comment
+  function handleSetComment(e) {
+    e.preventDefault();
+
+    console.log(comment)
+  }
   return (
     <div>
         {! question ? 
@@ -42,7 +52,13 @@ function Question() {
             {question.answers && question.answers.map(function(answer) {
                 return (
                     <li className='answer'>
-                        <p>{answer.answerTitle}</p>
+                        <p>{answer.answer}</p>
+                        <form action="" onSubmit={e => handleSetComment(e)}>
+                          <input type="text" onChange={e => setComment(e.target.value)}/>
+                          <button type="button" className="vote up"><i class="fa-solid fa-thumbs-up"></i></button>
+                          <button type="button" className="vote down"><i class="fa-solid fa-thumbs-down"></i></button>
+                          <button type="submit">Comment</button>
+                        </form>
                     </li>
                 )
             })}

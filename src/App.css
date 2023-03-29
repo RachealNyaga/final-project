@@ -100,7 +100,13 @@ button {
   text-decoration: underline;
 }
 
+.vote {
+  margin-right: 10px;
+}
 
+.vote.down {
+  background-color: red;
+}
 
 .post-question{
   display: flex;
@@ -230,4 +236,45 @@ input[type="text"] {
   color: #fff;
   width: 100%;
   border-radius: 5px;
+}
+
+/* Profile */
+.profile {
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 20px;
+}
+
+.profile > div {
+  background-color: #f3f3f3;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-right .stats {
+  padding: 50px;
+}
+
+.profile-right .stats h6 {
+  font-size: 70px;
+  margin: 0;
+}
+
+.profile-right .stats p {
+  font-weight: bold;
 }
