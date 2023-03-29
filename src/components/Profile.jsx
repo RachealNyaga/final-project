@@ -14,11 +14,11 @@ function Profile() {
         </div>
 
         <div className="profile-right">
-            <div className="stats">
+            <div className="data">
                 <h6>10</h6>
                 <p>Questions asked</p>
             </div>
-            <div className="stats">
+            <div className="data">
                 <h6>20</h6>
                 <p>Questions answered</p>
             </div>

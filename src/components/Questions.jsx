@@ -33,7 +33,7 @@ function Questions() {
 
         let user = question.question.data.user
         console.log(user, loggedInUser)
-        // deete question that has the id passed in the arguments
+        // delete question that has the id passed in the arguments
         if(user == loggedInUser) {
             await deleteDoc(doc(db, "questions", id));
         } else {

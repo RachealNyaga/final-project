@@ -102,8 +102,12 @@ button {
 
 .vote {
   margin-right: 10px;
+  display: flex;
 }
 
+.vote span {
+  margin-left: 10px;
+}
 .vote.down {
   background-color: red;
 }
@@ -232,10 +236,16 @@ input[type="text"] {
 }
 
 .error {
-  background-color: red;
-  color: #fff;
-  width: 100%;
+
+  background-color: rgb(122, 24, 24);
+ margin: 120px auto;
+  width: 30%;
   border-radius: 5px;
+}
+.error p{
+  color: #fff;
+  padding: 10px;
+  margin-left: 50px;
 }
 
 /* Profile */
@@ -266,15 +276,37 @@ input[type="text"] {
   text-align: center;
 }
 
-.profile-right .stats {
+.profile-right .data {
   padding: 50px;
 }
 
-.profile-right .stats h6 {
+.profile-right .data h6 {
   font-size: 70px;
   margin: 0;
 }
 
-.profile-right .stats p {
+.profile-right .data p {
   font-weight: bold;
+}
+.answer-wrapper {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 50px;
+  align-items: baseline;
+  list-style: none;
+}
+
+.ans-votes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer input[type="text"]{
+  width: 50%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }

@@ -42,7 +42,9 @@ export const createQuestion = question => async dispatch => {
 
     const docRef = await addDoc(collection(db, "questions"), {
         title: question.question, 
-        user: question.loggedInUser
+        user: question.loggedInUser,
+        upvotes: 0,
+        downvotes: 0
     });
     console.log("Document written with ID: ", docRef.id);
     dispatch({
