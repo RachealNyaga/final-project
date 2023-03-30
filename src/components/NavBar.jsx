@@ -26,11 +26,21 @@ function NavBar() {
             <Link to={"/"}> <img src={Logo} alt="" /></Link>
            
         </div>
+        <div className="search">
+            <input
+              type="search"
+              name=""
+              id="search"
+              placeholder={`search your question`}
+            />
+          </div>
 
         <ul>
+          
             <li><Link to={"/"}>Home</Link></li>
             <li><Link to={"/questions"}>Questions</Link></li>
             {loggedIn ? <li><Link to={"/profile"}>Profile</Link></li> : ""}
+            {loggedIn !== <li><Link to={"/Login"}>Login</Link></li> }
             {loggedIn ? <li><button onClick={handleLogout}>Logout</button></li> : ""}
         </ul>
     </div>

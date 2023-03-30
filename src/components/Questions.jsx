@@ -10,6 +10,7 @@ function Questions() {
     ///////////////////////////////////
     const dispatch = useDispatch()
     const questions = useSelector((state) => state.questions)
+    const loggedInUser = JSON.parse(sessionStorage.getItem("user"));
     console.log(questions)
     ////////////////////////////////////
 
@@ -49,10 +50,14 @@ function Questions() {
         :
         questions.items.map(function(question) {
             return(
+                
                 <div className='question' key={question.id}>
+                    
                     <h3>{question.data.title}</h3>
+                    
                     <Link to={"/question/" + question.id}>View More</Link>
                     <button onClick={() => handleDelete({question})}>Delete</button>
+                    <p>{loggedInUser.providerData[0].displayName}</p>
                 </div>
             )
         })}

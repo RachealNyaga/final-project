@@ -100,17 +100,7 @@ button {
   text-decoration: underline;
 }
 
-.vote {
-  margin-right: 10px;
-  display: flex;
-}
 
-.vote span {
-  margin-left: 10px;
-}
-.vote.down {
-  background-color: red;
-}
 
 .post-question{
   display: flex;
@@ -154,10 +144,10 @@ input[type="text"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 70vh;
   padding: 30px;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: rgb(242, 231, 211);
   font-family: Arial, sans-serif;
 }
 
@@ -258,15 +248,16 @@ input[type="text"] {
 }
 
 .profile > div {
-  background-color: #f3f3f3;
+  background-color: rgb(242, 231, 211);
   padding: 20px;
   border-radius: 20px;
 }
 
 .profile img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  
 }
 
 .profile-right {
@@ -288,25 +279,178 @@ input[type="text"] {
 .profile-right .data p {
   font-weight: bold;
 }
+
+
+
+
+input[type="search"]{
+  width: 600px;
+  padding: 8px;
+  border-radius: 4px;
+  border-style: 1px solid #E1ECF4;
+  outline: #E1ECF4;
+}/* Question component styles */
+.question-title {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
 .answer-wrapper {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  grid-gap: 50px;
-  align-items: baseline;
+  margin-top: 2rem;
+}
+
+.answer {
+  margin-top: 23px;
+  width: 70%;
+  border-radius: 7px ;
   list-style: none;
+  background-color: rgb(242, 231, 211);
+}
+
+.answer p {
+  margin: 12px 10px;
+  
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .ans-votes {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 }
 
-.answer input[type="text"]{
-  width: 50%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+.upvotes,
+.downvotes {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
 }
+
+
+
+.vote {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #666;
+}
+
+.vote:hover {
+  color: #000;
+}
+
+.vote:focus {
+  outline: none;
+}
+
+.vote i {
+  margin-right: 0.5rem;
+}
+
+.vote.up:hover i {
+  border-radius: 10px;
+  padding: 5px;
+  background: green;
+}
+
+.vote.down:hover i {
+  color: red;
+}
+
+.comment-form {
+  margin-top: 1rem;
+}
+
+.input input[type="text"] {
+
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin-left: 15px;
+  width: 50%;
+}
+
+.comment-form button[type="submit"] {
+  background: #3b3b3b;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-form button[type="submit"]:hover {
+  background: #000;
+}
+
+.answer-form {
+  margin-top: 23px;
+  background-color: #0077cc;
+}
+
+.answer-form input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin: 35px 15px;
+  width: 50%;
+}
+
+.answer-form button[type="submit"] {
+  background: #3b3b3b;
+  color: #fff;
+  padding: 8px 13px;
+  border: none;
+  cursor: pointer;
+}
+
+.answer-form button[type="submit"]:hover {
+  background: #000;
+}
+.quizz h1{
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .profile {
+    flex-wrap: nowrap;
+    
+      width: 80%;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 10px;
+    
+  }
+
+  .profile-left {
+    flex-basis: 30%;
+    text-align: left;
+  }
+
+  .profile-right {
+    flex-basis: 70%;
+    margin-top: 0;
+  }
+}
+/* @media screen and (min-width: 768px) {
+  .home {
+    max-width: 400px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+} */
